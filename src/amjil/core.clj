@@ -12,7 +12,9 @@
 (defn area-urls []
   (let [areas (->> (-> (client/get area-url) :body (java.io.StringReader.) (html/html-resource)
                      (html/select [:div.city_hot :ul :li :a]))
-                (map #(list (first (:content %)) (-> % :attrs :href))))]))
+                (map #(list (first (:content %)) (-> % :attrs :href)))
+                (map #(into [] %))
+                (into {}))]))
 
 
 
