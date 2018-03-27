@@ -12,7 +12,7 @@
 (def hour24-url "http://tianqi.moji.com/index/getHour24")
 (def area-url "http://tianqi.moji.com/weather/china/inner-mongolia")
 
-(def condition {"晴" "ᠴᠡᠯᠮᠡᠭ" "多云" "ᠡᠭᠦᠯᠡᠲᠡᠢ" "少云" "ᠡᠭᠦᠯᠡᠷᠬᠡᠭ" "阴" "ᠪᠦᠷᠬᠦᠭ" "雨夹雪" "ᠪᠣᠷᠤᠭ᠎ᠠ ᠴᠠᠰᠤ"})
+(def condition {"晴" "ᠴᠡᠯᠮᠡᠭ" "多云" "ᠡᠭᠦᠯᠡᠲᠡᠢ" "少云" "ᠡᠭᠦᠯᠡᠷᠬᠡᠭ" "阴" "ᠪᠦᠷᠬᠦᠭ" "雨夹雪" "ᠪᠣᠷᠤᠭ᠎ᠠ ᠴᠠᠰᠤ" "小雨" "ᠪᠠᠭ᠎ᠠ ᠪᠣᠷᠤᠭ᠎ᠠ"})
 
 (defn area-urls []
   (let [areas (->> (-> (client/get area-url) :body (java.io.StringReader.) (html/html-resource)
