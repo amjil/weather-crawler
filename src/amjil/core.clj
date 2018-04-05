@@ -6,61 +6,6 @@
             [clojure.tools.logging :as log])
   (:gen-class))
 
-(def hahha [{:id 1 :categories 1 :name "文艺照" :multi true
-             :data [{:id 1 :name "单人" :amount 299.0 :data [{:id 1 :name "单人四宫格" :amount 200.0} {:id 2 :name "单人六宫格"}]}
-                    {:id 2 :name "情侣" :amount 358.0 :data [{:id 1 :name "情侣四宫格" :amount 200.0} {:id 2 :name "情侣九宫格"}]}
-                    {:id 3 :name "闺蜜" :amount 358.0 :data {:id 1 :name "闺蜜拍摄人数" :amount 2}}
-                    {:id 4 :name "亲子" :amount 358.0 :data {:id 1 :name "亲子拍摄人数" :amount 2}}]}
-            {:id 1 :name "形象套餐"  :categories 1
-             :data [{:id 1 :name "形象套餐" :amount 399.0}]}
-            {:id 2 :name "仙女照-单人"  :categories 1
-             :data [{:id 1 :name "仙女照-单人" :amount 299.0
-                     :data [{:id 1 :name "单人四宫格" :amount 200}
-                            {:id 2 :name "单人六宫格" :amount 360}
-                            {:id 3 :name "单人九宫格" :amount 600}]}]}
-            {:id 3 :name "仙女照-双人"  :categories 1
-             :data [{:id 1 :name "仙女照-单人" :amount 398.0
-                     :data [{:id 1 :name "双人四宫格" :amount 261}
-                            {:id 2 :name "双人六宫格" :amount 461}
-                            {:id 3 :name "双人九宫格" :amount 701}]}]}
-            {:id 4 :name "精致证件照"  :categories 2
-             :data [{:id 1 :name "精致证件照" :multi true :data [{:id 1 :name "白色" :amount 159} {:id 2 :name "蓝色" :amount 159}]}]}
-            {:id 5 :name "精致签证照"  :categories 2
-             :data [{:id 1 :name "精致签证照" :amount 159.0}]}
-            {:id 6 :name "结婚照"  :categories 2
-             :data [{:id 1 :name "结婚登记照" :amount 299.0
-                     :data [{:id 1 :name "纪念套餐A" :amount 179} {:id 2 :name "纪念套餐B" :amount 300.0}]}
-                    {:id 2 :name "结婚纪念照" :amount 358
-                     :data [{:id 1 :name "四宫格" :amount 241} {:id 2 :name "六宫格" :amount 441} {:id 3 :name "九宫格" :amount 641}]}]}
-            {:id 7 :name "职业形象照"  :categories 2
-             :data [{:id 1 :name "职业形象照" :amount 299.0
-                     :data [{:id 1 :name "四宫格" :amount 200}
-                            {:id 2 :name "六宫格" :amount 360}
-                            {:id 3 :name "九宫格" :amount 600}]}]}
-            {:id 8 :categories 3 :name "真颜照" :multi true
-             :data [{:id 1 :name "单人" :amount 299.0
-                     :data [{:id 1 :name "单人四宫格" :amount 200.0} {:id 2 :name "单人六宫格" :amount 360} {:id 3 :name "单人九宫格" :amount 600}]}
-                    {:id 2 :name "情侣" :amount 398.0
-                     :data [{:id 1 :name "情侣四宫格" :amount 261.0} {:id 2 :name "情侣六宫格" :amount 461} {:id 3 :name "情侣九宫格" :amount 701}]}
-                    {:id 3 :name "闺蜜" :amount 398.0
-                     :data [{:id 1 :name "闺蜜四宫格" :amount 261.0} {:id 2 :name "闺蜜六宫格" :amount 461} {:id 3 :name "闺蜜九宫格" :amount 701}]}
-                    {:id 4 :name "亲子" :amount 398.0
-                     :data [{:id 1 :name "亲子四宫格" :amount 261.0} {:id 2 :name "亲子六宫格" :amount 461} {:id 3 :name "亲子九宫格" :amount 701}]}]}
-            ;
-            {:id 9 :categories 3 :name "文艺照" :multi true
-             :data [{:id 1 :name "单人" :amount 299.0 :data [{:id 1 :name "单人四宫格" :amount 200.0} {:id 2 :name "单人六宫格"}]}
-                    {:id 2 :name "情侣" :amount 358.0 :data [{:id 1 :name "情侣四宫格" :amount 200.0} {:id 2 :name "情侣九宫格"}]}
-                    {:id 3 :name "闺蜜" :amount 358.0 :data {:id 1 :name "闺蜜拍摄人数" :amount 2}}
-                    {:id 4 :name "亲子" :amount 358.0 :data {:id 1 :name "亲子拍摄人数" :amount 2}}]}
-            {:id 10 :categories 3 :name "全家福"
-             :data [{:id 1 :name "全家福" :amount 499 :data {:id 1 :name "闺蜜拍摄人数" :amount 2}}]}
-            {:id 1 :data [{:id 1 :data 2}
-                          {:id 2 :data 1}
-                          {:id 3 :data 5}]}
-
-            {:id 4 :data [{:id :data [1 2]}]}])
-
-
 (def my-cookie (cookie/cookie-store))
 (def forcast15-url "http://tianqi.moji.com/forecast15/china/inner-mongolia/")
 (def weather-url "http://tianqi.moji.com/weather/china/inner-mongolia/")
