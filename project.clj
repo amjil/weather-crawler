@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/data.json "1.0.0"]
                  [org.clojure/tools.logging "1.0.0"]
+                 [cprop "0.1.13"]
                  [clj-http "3.10.0"]
                  [clj-time "0.15.2"]
                  [enlive "1.1.6"]
@@ -14,4 +15,8 @@
   :plugins [[lein-ancient "0.6.15"]]
   :main ^:skip-aot amjil.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles
+  {:uberjar {:aot :all}
+   :dev           [:project/dev :profiles/dev]
+   :project/dev  {:jvm-opts ["-Dconf=config.edn"]}
+   :profiles/dev {}})
